@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียน</title>
+</head>
+<body>
+    <h1 align="center">แบบฟอร์มลงทะเบียน</h1>
+    <form align="center"> 
+        <div> 
+            <label for="name">ชื่อจริง</label>
+            <input type="text" name="name" id="name" placeholder="ป้อนชื่อจริง (ก-ฮ)" required>
+            <!--placeholder คือตัวหนังสือจางๆที่ไว้อธิบาย/ชี้นำว่าคนกรอกควรกรอกอะไรใส่ช่องนี้-->
+            <!--required คือการกำหนดว่าต้องใส่ข้อมูลอันนี้ก่อน ถึงจะส่งข้อมูลไปได้ ต้องใส่ attribute นี้ตามหลัง-->
+            <!--readonly คือการกำหนดว่าอ่านได้อย่างเดียว ต้องใส่ attribute นี้ตามหลัง-->
+    </div>
+    <div align="center">
+        <label for="lastname">นามสกุล</label>
+        <input type="text" name="Lastname" id="lastname"> 
+    </div>
+    <div>
+        <!--ถ้ากำหนดtypeเป็นemail เวลาเรากรอกมันจะเป็นรูปแบบอีเเมล์เท่านั้น 1@1.com-->
+        <label for="lastname">EmailAddress</label>
+        <input type="email" name="Email"
+    </div>
+    <div>
+        <!--ถ้ากำหนดtypeเป็นpassword เวลาเรากรอกมันจะเป็น****ไม่ให้เห็นตัวที่เรากรอก-->
+        <label for="password">Password</label>
+        <input type="password" name="password"
+    </div>
+    <div>
+        <!--การกำหนดช่องกล่องที่อยู่ สามารถกำหนดได้ด้วยการใส่ textarea colsคือความกว้าง row คือความสูง-->
+        <label align="center" for="address">ที่อยู่</label>
+        <textarea name="" cols="20" rows="5"></textarea>
+    </div>
+    <div> 
+        <!--การกำหนดอายุสามารถกำหนดน้อยสุด มากสุด หรือระบุจำนวนเริ่มต้นได้โดยใช้ value ถ้าเรากำหนด type ให้เป็น number มันก็จะใส่ได้เฉพาะตัวเลข ตัว value สามารถกำหนดได้ทั้งเลจและตัวหนังสือแล้วแต่ typeที่เรากำหนด-->
+        <label for="lastname">อายุ</label>
+        <input type="number" name="age" min="0" max="100" value="15">
+    </div>
+    <div>
+        <label for="birth">วันเกิด</label>
+        <input type="date" name="birthdate">
+    </div>
+    <div>
+        <label for="phonenumber">Tel</label>
+        <input type="tel" name="phonenumber">
+    </div>
+    <div>
+        <label for="favoritecolor">favoritecolor</label>
+        <input type="color" name="color">
+    </div>
+    <div>
+        <!--การใช้ dropdown list-->
+        <label for="educate">ระดับการศึกษา</label>
+        <select name="educate">
+            <option value="ปริญญาตรี">ปริญญาตรี</option>
+            <option value="มัธยมศึกษา">มัธยมศึกษา</option>
+            <option value="ปริญญาโท" selected>ปริญญาโท</option>
+        </select>
+            <!--ถ้าใช้คำสั่ง selectedต่อท้ายปริญญาโท คือการล็อคค่าว่าค่าเริ่มต้นคือปริญญาโท-->
+    </div>
+    <div>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender">Male
+        <input type="radio" name="gender">Female
+        <input type="radio" name="gender">Other
+    </div>
+    <!--radio คือช้อยๆ ช้อยเดียว เป็นกลุ่มของข้อมูล /// และ ต้องตั้งชื่อให้เหมือนกัน เพื่อให้อยู่กลุ่มๆเดียวกัน ชื่อที่ว่าคือ name="อันนี้ต้องเหมือนกัน"-->
+    <!--สมมติว่าถ้าชื่อไม่เหมือนกัน จะสามารถเลือกได้ทุกค่าเลย แบบ multiple choice ถ้ากลุ่มเดียวกันจะเลือกได้ อันใดอันหนึ่งเท่านั้น"-->
+    <div>
+        <!--การใส่ name คือการจัดกลุ่ม-->
+        <label for="favoritethings">สิ่งที่ชอบ</label>
+        <input type="checkbox" name="fav">เขียนเว็บ
+        <input type="checkbox" name="fav">วาดรูป
+        <input type="checkbox" name="fav">เล่นเกม
+        <input type="checkbox" name="fav">อ่านหนังสือ
+    </div>
+    <div>
+        <!--การแนบไฟล์ ใช้ input type file-->
+        <label for="attachment">แนบเอกสาร</label>
+        <input type="file" name="attachment" id="attachment">
+    </div>
+    <div>
+        <!--การแนบurl ใช้ input type url-->
+        <label for="attachment">website</label>
+        <input type="url" name="website" id="website">
+    </div>
+    <div> <!--ปุ่มส่งข้อมูล ใช้ button แทนได้ -->
+        <input type="submit" value="submit">
+        <button type="reset">reset</button>
+    </div>
+    <!--ปุ่มreset ต้องอยู่ใน /form เท่านั้น ไม่งั้นมันไม่ล้างข้อมูลให้ -->
+</form>
+</body>
+</html>
